@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Comanda</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Criar Comanda</h1>
+    <form id="comandaForm" action="php/criar_comanda.php" method="post">
+        <label for="categoria_id">Categoria:</label>
+        <select id="categoria_id" name="categoria_id" onchange="carregarSubcategorias()" required>
+            <!-- Opções de categorias serão carregadas aqui -->
+        </select>
+        <label for="subcategoria_id">Subcategoria:</label>
+        <select id="subcategoria_id" name="subcategoria_id" onchange="carregarProdutos()" required>
+            <!-- Opções de subcategorias serão carregadas aqui -->
+        </select>
+        <label for="produto_id">Produto:</label>
+        <select id="produto_id" name="produto_id" required>
+            <!-- Opções de produtos serão carregadas aqui -->
+        </select>
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" id="quantidade" name="quantidade" required>
+        <button type="button" onclick="adicionarProduto()">Adicionar Produto</button>
+    </form>
+    <h2>Produtos na Comanda</h2>
+    <div id="comandaItens">
+        <!-- Itens da comanda serão listados aqui -->
+    </div>
+    <button type="button" onclick="finalizarComanda()">Finalizar Comanda</button>
+    <h2>Comandas Criadas</h2>
+    <div id="comandas">
+        <!-- Listagem de comandas será carregada aqui -->
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
