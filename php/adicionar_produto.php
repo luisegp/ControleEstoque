@@ -7,11 +7,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $preco = $_POST['preco'];
     $subcategoria_id = $_POST['subcategoria_id'];
 
-    $stmt = $conn->prepare("INSERT INTO produtos (nome, quantidade, preco, subcategoria_id) VALUES (?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO produto (nome, estoque, preco, subcategoria_id) VALUES (?, ?, ?, ?)");
     if ($stmt->execute([$nome, $quantidade, $preco, $subcategoria_id])) {
         echo "Produto adicionado com sucesso!";
     } else {
         echo "Erro ao adicionar produto!";
     }
+
+    header("Location: ../estoque.php");
+    exit();
 }
 ?>

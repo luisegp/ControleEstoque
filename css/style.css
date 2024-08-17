@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -15,12 +16,12 @@ time, mark, audio, video {
     padding: 0;
     border: 0;
     font-size: 100%;
-    font: inherit;
+    font-family: 'Poppins', sans-serif;
     vertical-align: baseline;
+    font-weight: 400;
 }
 
 body {
-    font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f9f9f9;
     color: #333;
@@ -40,8 +41,20 @@ header {
 
 header h1 {
     font-size: 2em;
+    font-weight: 600;
 }
-
+.header_container{
+    display: inline;
+    text-align: center;
+}
+.header_content{
+    display: inline-flex;
+    text-align: center;
+}
+li{
+    list-style: none;
+    margin-right: 1rem;
+}
 a {
     color: #007bff;
     text-decoration: none;
@@ -49,6 +62,8 @@ a {
 
 a:hover {
     text-decoration: underline;
+    font-weight: 600;
+    color:aqua
 }
 
 input[type="text"],
@@ -82,4 +97,15 @@ footer {
     color: #fff;
     padding: 20px 0;
     text-align: center;
+}
+.larger-select {
+    width: 250px;
+    padding: 5px;
+    font-size: 16px;
+}
+/* Estilo para o campo de seleção de subcategorias */
+.select-subcategoria {
+    width: 200px !important; /* Força a largura para 200px */
+    padding: 5px; /* Adiciona um pouco de espaçamento interno */
+    box-sizing: border-box; /* Inclui padding e border na largura total do elemento */
 }

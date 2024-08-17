@@ -7,9 +7,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $stmt = $conn->prepare("INSERT INTO subcategorias (nome, categoria_id) VALUES (?, ?)");
     if ($stmt->execute([$nome, $categoria_id])) {
-        echo "Subcategoria adicionada com sucesso!";
+        echo "sub-categoria adicionada com sucesso!";
     } else {
-        echo "Erro ao adicionar subcategoria!";
+        echo "Erro ao adicionar categoria: " . $e->getMessage();
     }
+    sleep(2);
+    header("Location: ../estoque.php");
+    exit();
 }
-?>

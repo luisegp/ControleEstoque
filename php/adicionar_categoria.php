@@ -1,5 +1,5 @@
 <?php
-include '../db.php';  // Ajuste o caminho conforme necessário
+include 'db.php';  // Caminho correto se db.php está na mesma pasta
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nome = $_POST['nome'];
@@ -16,5 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         echo "Erro na conexão com o banco de dados.";
     }
+
+    // Aguarda 2 segundos e redireciona
+    sleep(2);
+    header("Location: ../estoque.php");
+    exit(); // Assegura que o script termina após o redirecionamento
 }
 ?>
